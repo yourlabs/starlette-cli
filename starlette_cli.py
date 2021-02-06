@@ -28,7 +28,7 @@ project = apps.Project.current()
 @app.cli.cmd(color='green')
 def middlewares():
     """Dump middlewares for this project."""
-    middlewares = project.starlette().user_middleware
+    middlewares = project._starlette.user_middleware
     print(f'\nFound {len(middlewares)} middlewares in {project}\n')
     for middleware in middlewares:
         print(''.join([cli2.c.green, middleware.cls.__name__, cli2.c.reset]))
@@ -66,7 +66,7 @@ def urls():
                 result[name] = path
         return result
 
-    data = extract_routes(apps.Project.current().starlette().routes)
+    data = extract_routes(apps.Project.current()._starlette.routes)
     print(f'\nFound {len(data)} routes in {project}\n')
 
     if not data:
