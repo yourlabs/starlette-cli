@@ -13,5 +13,5 @@ setup(
     license='MIT',
     keywords='starlette cli',
     python_requires='>=3',
-    install_requires=['starlette-apps'],
+    install_requires=['starlette-apps>=0.1.6'],
 )

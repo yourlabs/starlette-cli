@@ -1,0 +1,21 @@
+test:
+  image: yourlabs/python
+  script:
+  - pip install .
+  - ./example.py middlewares | tee -a middlewares.out
+  - grep TestMiddleware middlewares.out
+  - ./example.py urls | tee -a urls.out
+  - grep test_view urls.out
+
+qa:
+  stage: test
+  image: yourlabs/python
+  script: flake8
+
+pypi:
+  stage: deploy
+  image: yourlabs/python
+  script: pypi-release
+  only:
+    refs:
+    - tags
