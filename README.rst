@@ -1,8 +1,9 @@
 Starlette-cli: make your project a cli too!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is a [starlette-app](https://yourlabs.io/oss/starlette-apps) that provides
-a CLI with a few basic Starlette commands, and which your other apps may extend.
+This is a `starlette-app
+<https://yourlabs.io/oss/starlette-apps>`_ that provides a CLI with a few basic
+Starlette commands, and which your other apps may extend.
 
 Example
 =======
